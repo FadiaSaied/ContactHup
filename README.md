@@ -1,4 +1,4 @@
-# ContactHup 📇 
+# ContactHup 📇
 
 My 9th assignment during the Front-End Development track at Route Academy.
 
@@ -26,6 +26,10 @@ My 9th assignment during the Front-End Development track at Route Academy.
 * LocalStorage
 * SweetAlert2
 
+## 🔗 Links
+
 **Live Demo:**
 https://fadiasaied.github.io/ContactHup/
 
+**GitHub Repository:**
+https://github.com/FadiaSaied/ContactHup
