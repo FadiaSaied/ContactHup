@@ -54,6 +54,7 @@
                       Add New Contact
                     </h2>
                     <button
+                      onclick="resetForm()"
                       type="button"
                       class="btn-close icon"
                       data-bs-dismiss="modal"
@@ -89,7 +90,6 @@
                           class="form-control formInput"
                           id="fullName"
                           placeholder="Enter full name"
-                          
                         />
                         <p id="msgName" class="hint text-danger my-2 d-none">
                           Name should contain only letters and spaces (2-50
@@ -107,7 +107,6 @@
                           class="form-control formInput"
                           id="phone"
                           placeholder="e.g., 01012345678"
-                          
                         />
                         <p id="msgPhone" class="hint text-danger my-2 d-none">
                           Please enter a valid Egyptian phone number

@@ -34,6 +34,15 @@ function addUser() {
     validation(fullNameInput, "msgName") &&
     validation(phoneNumberInput, "msgPhone")
   ) {
+    if (isPhoneExcit(phoneNumberInput.value)) {
+      Swal.fire({
+        title: "Duplicate Phone Number",
+        text: "A contact with this phone number already exists",
+        icon: "error",
+        showConfirmButton: true,
+      });
+      return;
+    }
     let user = {
       img: imageInput.files[0]
         ? `./images/${imageInput.files[0].name}`
@@ -266,7 +275,7 @@ function displayUser() {
 function deleteUser(index) {
   Swal.fire({
     title: "Delete Contact?",
-    text: "Are you sure you want to delete Kato Larson? This action cannot be undone.",
+    text: "Are you sure?",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#C62222",
@@ -346,6 +355,11 @@ function updataUser() {
   }
 }
 
+function resetForm() {
+  clearForm();
+  btnSave.classList.remove("d-none");
+  btnUpdate.classList.add("d-none");
+}
 function toggleFav(index) {
   userList[index].fav = !userList[index].fav;
   localStorage.setItem("userContainer", JSON.stringify(userList));
@@ -362,24 +376,8 @@ function searchUser() {
   let text = searchInput.value.trim();
   let collect = "";
   for (let i = 0; i < userList.length; i++) {
-    let groupOption = "";
-    switch (userList[i].group) {
-      case "Family":
-        groupOption = `<span class="badge family">${userList[i].group}</span>`;
-        break;
-      case "Friends":
-        groupOption = `<span class="badge friends">${userList[i].group}</span>`;
-        break;
-      case "School":
-        groupOption = `<span class="badge school">${userList[i].group}</span>`;
-        break;
-      case "Work":
-        groupOption = `<span class="badge work">${userList[i].group}</span>`;
-        break;
-      case "Other":
-        groupOption = `<span class="badge other">${userList[i].group}</span>`;
-        break;
-    }
+    let groupOption = userList[i].group;
+
     if (
       userList[i].name.toLowerCase().includes(text.toLowerCase()) ||
       userList[i].email.toLowerCase().includes(text.toLowerCase()) ||
@@ -429,8 +427,8 @@ function searchUser() {
                         <div
                           class="badgeUser mt-3 d-flex align-items-center gap-2 my-2"
                         >
-                          
-                          ${groupOption}
+                          <span class="badge ${groupOption}">${groupOption}</span>
+                         
                        
                           <div 
 
@@ -511,4 +509,13 @@ function validation(element, msgId) {
     msg.classList.remove("d-none");
     return false;
   }
+}
+
+function isPhoneExcit(phoneNum) {
+  for (let i = 0; i < userList.length; i++) {
+    if (userList[i].phone === phoneNum) {
+      return true;
+    }
+  }
+  return false;
 }
