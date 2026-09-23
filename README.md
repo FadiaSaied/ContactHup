@@ -25,7 +25,7 @@ My 9th assignment during the Front-End Development track at Route Academy.
 * Font Awesome
 * LocalStorage
 * SweetAlert2
-* 
+
 **Live Demo:**
 https://fadiasaied.github.io/ContactHup/
 
