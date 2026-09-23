@@ -299,6 +299,7 @@ function deleteUser(index) {
 
 function setUpadateInfo(index) {
   currentIndex = index;
+
   fullNameInput.value = userList[index].name;
   phoneNumberInput.value = userList[index].phone;
   emailAddressInput.value = userList[index].email;
@@ -309,6 +310,7 @@ function setUpadateInfo(index) {
   emergencyInput.checked = userList[index].emergency;
   btnSave.classList.add("d-none");
   btnUpdate.classList.remove("d-none");
+  imageInput.dataset.oldImage = userList[index].img;
 }
 
 function updataUser() {
@@ -319,7 +321,7 @@ function updataUser() {
     let user = {
       img: imageInput.files[0]
         ? `./images/${imageInput.files[0].name}`
-        : `./images/avatar.jpeg`,
+        : imageInput.dataset.oldImage,
       name: fullNameInput.value.trim(),
       phone: phoneNumberInput.value.trim(),
       email: emailAddressInput.value.trim(),
