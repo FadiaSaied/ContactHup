@@ -31,5 +31,4 @@ My 9th assignment during the Front-End Development track at Route Academy.
 **Live Demo:**
 https://fadiasaied.github.io/ContactHup/
 
-**GitHub Repository:**
-https://github.com/FadiaSaied/ContactHup
+
