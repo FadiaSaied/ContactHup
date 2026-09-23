@@ -1,6 +1,6 @@
-# ContactHup 📇 — Assignment 9
+# ContactHup 📇 
 
-ContactHup is a smart contact management web application built with HTML, CSS, JavaScript, and Bootstrap.
+My 9th assignment during the Front-End Development track at Route Academy.
 
 ## ✨ Features
 
@@ -25,11 +25,7 @@ ContactHup is a smart contact management web application built with HTML, CSS, J
 * Font Awesome
 * LocalStorage
 * SweetAlert2
-
-## 🔗 Links
-
+* 
 **Live Demo:**
 https://fadiasaied.github.io/ContactHup/
 
-**GitHub Repository:**
-https://github.com/FadiaSaied/ContactHup
